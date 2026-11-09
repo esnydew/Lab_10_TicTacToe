@@ -234,7 +234,7 @@ public class TicTacToe {
      * @return a boolean for if there is a tie.
      */
     private static boolean isTie() {
-        // Will not correctly end game early in some instances. isFull() is a reliable fall back, but may miss some ties.
+        // Will not correctly end game early in some instances due to how games are tracked: forced ties, where there's only one move left, and it's forced into a tie, aren't detected. isFull() is a reliable fall back, but may miss some ties.
         return isFull() || (isRowTie() && isColTie() && isDiagonalTie());
     }
 
